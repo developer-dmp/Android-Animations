@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    android:animateLayoutChanges="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/skipButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="15dp"
+        android:text="Animate Me"
+        />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/form_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:id="@+id/form_views"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/form_expand_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Continue with form"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:padding="10dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/usernameTextInputContainer"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                android:visibility="gone">
+                <EditText
+                    android:id="@+id/username_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username *"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textCursorDrawable="@null"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@+id/age_editText"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ageTextInputContainer"
+                app:counterEnabled="true"
+                app:counterMaxLength="2"
+                android:visibility="gone">
+                <EditText
+                    android:id="@+id/age_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Age *"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textCursorDrawable="@null"
+                    android:nextFocusForward="@+id/email_editText"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/emailTextInputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                android:visibility="gone">
+                <EditText
+                    android:id="@+id/email_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="E-mail *"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textCursorDrawable="@null"
+                    android:imeOptions="actionGo"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/submitButton"
+                android:background="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:text="Submit"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/display_textView"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rounded_corners"
+        android:textSize="22sp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:text="Information will be here..."
+        android:textColor="@android:color/white"
+        android:visibility="invisible"/>
+</FrameLayout>
